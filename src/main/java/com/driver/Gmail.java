@@ -38,8 +38,18 @@ public class Gmail extends Email {
         // Each message is distinct
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
         if(list.size()!=0) {
-            for (Inbox i : list) {
-                String m = i.getMessage();
+//            for (Inbox i : list) {
+//                String m = i.getMessage();
+//                if (message.equals(m)) {
+//                    Trash.addLast(i);
+//                    list.remove(i);
+//                }
+//            }
+            Iterator<Inbox> t = list.iterator();
+            while(t.hasNext()){
+                Inbox i = t.next();
+               String m =i.getMessage();
+
                 if (message.equals(m)) {
                     Trash.addLast(i);
                     list.remove(i);
