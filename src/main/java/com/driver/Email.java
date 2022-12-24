@@ -29,7 +29,7 @@ public class Email {
         // 3. It contains at least one lowercase letter
         // 4. It contains at least one digit
         // 5. It contains at least one special character. Any character apart from alphabets and digits is a special character
-        if(getEmailId().equals(oldPassword)){
+        if(getPassword().equals(oldPassword)){
             boolean l8=false;
             boolean oneUp=false;
             boolean oneLow = false;
@@ -52,6 +52,7 @@ public class Email {
                 }
                 if(l8&&oneUp&&oneLow&&onedig&&onespec){
                     setPassword(newPassword);
+                    System.out.println("done");
                 }
             }
         }

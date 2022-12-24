@@ -37,11 +37,13 @@ public class Gmail extends Email {
     public void deleteMail(String message){
         // Each message is distinct
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
-        for(Inbox i : list){
-            String m = i.getMessage();
-            if(message.equals(m)){
-                Trash.addLast(i);
-                list.remove(i);
+        if(list.size()!=0) {
+            for (Inbox i : list) {
+                String m = i.getMessage();
+                if (message.equals(m)) {
+                    Trash.addLast(i);
+                    list.remove(i);
+                }
             }
         }
     }
@@ -49,7 +51,7 @@ public class Gmail extends Email {
     public String findLatestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the latest mail present in the inbox
-        if(list!=null){
+        if(list.size()!=0){
             Inbox i = list.getLast();
             return i.getMessage();
         }
