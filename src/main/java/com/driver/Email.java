@@ -52,7 +52,6 @@ public class Email {
                 }
                 if(l8&&oneUp&&oneLow&&onedig&&onespec){
                     setPassword(newPassword);
-                    System.out.println("done");
                 }
             }
         }
